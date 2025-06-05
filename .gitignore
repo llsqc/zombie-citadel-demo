@@ -69,3 +69,5 @@ crashlytics-build.properties
 
 /Assets/_TerrainAutoUpgrade.meta
 /Assets/_TerrainAutoUpgrade/*
+
+/Assembly-CSharp.csproj.DotSettings
