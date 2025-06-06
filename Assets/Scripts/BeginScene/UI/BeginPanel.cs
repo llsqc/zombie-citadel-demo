@@ -13,7 +13,7 @@ public class BeginPanel : BasePanel
     {
         btnStart.onClick.AddListener(() => { });
 
-        btnSetting.onClick.AddListener(() => { });
+        btnSetting.onClick.AddListener(() => { UIManager.Instance.ShowPanel<SettingPanel>(); });
 
         btnQuit.onClick.AddListener(Application.Quit);
     }
