@@ -11,7 +11,11 @@ public class BeginPanel : BasePanel
 
     protected override void Init()
     {
-        btnStart.onClick.AddListener(() => { });
+        btnStart.onClick.AddListener(() =>
+        {
+            Camera.main?.GetComponent<CameraAnimator>().TurnLeft(() => { print("show player"); });
+            UIManager.Instance.HidePanel<BeginPanel>();
+        });
 
         btnSetting.onClick.AddListener(() => { UIManager.Instance.ShowPanel<SettingPanel>(); });
 
