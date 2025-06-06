@@ -21,6 +21,7 @@
 .idea/
 /[Aa]ssets/Plugins/Editor/JetBrains*
 # Visual Studio
+/.vsconfig
 .vs/
 # VS/MD/Consulo 临时文件
 ExportedObj/
