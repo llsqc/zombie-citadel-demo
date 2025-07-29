@@ -54,10 +54,12 @@ public class ChooseHeroPanel : BasePanel
                 GameDataMgr.Instance.SavePlayerData();
                 UpdateLockButton();
                 //提示面板
+                UIManager.Instance.ShowPanel<TipPanel>().ChangeInfo("解锁成功");
             }
             else
             {
                 //提示面板显示金币不足
+                UIManager.Instance.ShowPanel<TipPanel>().ChangeInfo("金币不足");
             }
         });
         btnStart.onClick.AddListener(() =>
