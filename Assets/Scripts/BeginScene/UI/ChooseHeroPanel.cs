@@ -66,6 +66,7 @@ public class ChooseHeroPanel : BasePanel
         {
             GameDataMgr.Instance.nowSelectRole = _nowRoleData;
             UIManager.Instance.HidePanel<ChooseHeroPanel>();
+            UIManager.Instance.ShowPanel<ChooseScenePanel>();
         });
         btnBack.onClick.AddListener(() =>
         {
