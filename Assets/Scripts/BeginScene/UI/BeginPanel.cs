@@ -13,7 +13,11 @@ public class BeginPanel : BasePanel
     {
         btnStart.onClick.AddListener(() =>
         {
-            Camera.main?.GetComponent<CameraAnimator>().TurnLeft(() => { print("show player!"); });
+            Camera.main?.GetComponent<CameraAnimator>().TurnLeft(() =>
+            {
+                UIManager.Instance.ShowPanel<ChooseHeroPanel>();
+                
+            });
             UIManager.Instance.HidePanel<BeginPanel>();
         });
 

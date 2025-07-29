@@ -7,6 +7,8 @@ public class GameDataMgr
     private static GameDataMgr _instance = new GameDataMgr();
     public static GameDataMgr Instance => _instance;
 
+    public RoleInfo nowSelectRole;
+
     public MusicData musicData;
     public PlayerData playerData;
     public List<RoleInfo> roleInfoList;
