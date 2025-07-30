@@ -2717,7 +2717,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7695798332020923365}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2748,7 +2748,7 @@ Transform:
   - {fileID: 8406065917473112748}
   - {fileID: 4019335210626938586}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &282304541661378647
 Animator:
   serializedVersion: 5
@@ -2902,6 +2902,37 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.12823886, y: 0.036541224, z: 0.0000011324883}
     m_Extent: {x: 1.1405404, y: 0.4568623, z: 1.419667}
   m_DirtyAABB: 0
+--- !u!1 &8755373946460314925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4712165304226644060}
+  m_Layer: 0
+  m_Name: gunPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4712165304226644060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8755373946460314925}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -1.669, y: -0.164, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5987502796251419023}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &8775304535293708089
 GameObject:
   m_ObjectHideFlags: 0
@@ -3206,7 +3237,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 400000, guid: f4a2aeae66e02574fba4d5ad81cafdf1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4712165304226644060}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4a2aeae66e02574fba4d5ad81cafdf1, type: 3}
 --- !u!4 &5987502796251419023 stripped
