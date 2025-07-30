@@ -92,6 +92,7 @@ public class ChooseHeroPanel : BasePanel
         _heroObj = Instantiate(Resources.Load<GameObject>(_nowRoleData.res), _heroPos.position, _heroPos.rotation);
 
         UpdateLockButton();
+        UpdateTips();
     }
 
     private void UpdateLockButton()
@@ -107,6 +108,11 @@ public class ChooseHeroPanel : BasePanel
             btnUnlock.gameObject.SetActive(false);
             btnStart.gameObject.SetActive(true);
         }
+    }
+
+    private void UpdateTips()
+    {
+        txtName.text = _nowRoleData.tips;
     }
 
     public override void HideMe(UnityAction callBack)
