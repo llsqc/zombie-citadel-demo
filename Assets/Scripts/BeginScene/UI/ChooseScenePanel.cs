@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ChooseScenePanel : BasePanel
@@ -32,7 +33,12 @@ public class ChooseScenePanel : BasePanel
                 _nowIndex = 0;
             ChangeScene();
         });
-        btnStart.onClick.AddListener(() => { UIManager.Instance.HidePanel<ChooseScenePanel>(); });
+        btnStart.onClick.AddListener(() =>
+        {
+            UIManager.Instance.HidePanel<ChooseScenePanel>();
+            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(_nowSceneInfo.sceneName);
+            asyncOperation!.completed += (obj) => { GameLevelMgr.Instance.InitInfo(_nowSceneInfo); };
+        });
         btnBack.onClick.AddListener(() =>
         {
             UIManager.Instance.HidePanel<ChooseScenePanel>();

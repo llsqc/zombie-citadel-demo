@@ -40,6 +40,7 @@ public class MonsterObject : MonoBehaviour
         _animator.SetTrigger(wound);
         if (hp <= 0)
         {
+            Dead();
         }
         else
         {
@@ -55,6 +56,10 @@ public class MonsterObject : MonoBehaviour
 
     public void DeadEvent()
     {
+        GameLevelMgr.Instance.ChangeMonsterNum(-1);
+        Destroy(gameObject);
+
+        GameLevelMgr.Instance.IsGameOver();
     }
 
     public void BornOver()
@@ -68,7 +73,7 @@ public class MonsterObject : MonoBehaviour
         if (isDead)
             return;
         _animator.SetBool(run, _agent.velocity != Vector3.zero);
-        if( Vector3.Distance(this.transform.position, MainTowerObject.Instance.transform.position ) < 5 &&
+        if (Vector3.Distance(this.transform.position, MainTowerObject.Instance.transform.position) < 5 &&
             Time.time - _frontTime >= _monsterInfo.atkOffset)
         {
             _frontTime = Time.time;

@@ -97,6 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6935423620400060253}
   - component: {fileID: 1966522138301804709}
+  - component: {fileID: -8231747051881018659}
   m_Layer: 0
   m_Name: Role5
   m_TagString: Untagged
@@ -165,6 +166,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8231747051881018659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009688507790226551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1238e8e9907dc334bb9359be2b4f3e6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  roundSpeed: 50
+  gunPoint: {fileID: 3532255214608010957}
 --- !u!1 &1114703303939662619
 GameObject:
   m_ObjectHideFlags: 0

@@ -90,6 +90,7 @@ public class ChooseHeroPanel : BasePanel
 
         _nowRoleData = GameDataMgr.Instance.roleInfoList[_nowIndex];
         _heroObj = Instantiate(Resources.Load<GameObject>(_nowRoleData.res), _heroPos.position, _heroPos.rotation);
+        Destroy(_heroObj.GetComponent<PlayerObject>());
 
         UpdateLockButton();
         UpdateTips();

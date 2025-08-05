@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 
 public class MonsterPoint : MonoBehaviour
@@ -20,6 +21,9 @@ public class MonsterPoint : MonoBehaviour
     private void Start()
     {
         Invoke(nameof(CreateWave), firstDelayTime);
+
+        GameLevelMgr.Instance.AddMonsterPoint(this);
+        GameLevelMgr.Instance.UpdateMaxNum(maxWave);
     }
 
     private void CreateWave()
@@ -28,6 +32,7 @@ public class MonsterPoint : MonoBehaviour
         _nowNum = numEachWave;
         CreateMonster();
         --maxWave;
+        GameLevelMgr.Instance.ChangeNowWaveNum(1);
     }
 
     private void CreateMonster()
@@ -36,6 +41,8 @@ public class MonsterPoint : MonoBehaviour
         GameObject obj = Instantiate(Resources.Load<GameObject>(info.res), transform.position, Quaternion.identity);
         MonsterObject monsterObj = obj.AddComponent<MonsterObject>();
         monsterObj.InitInfo(info);
+        
+        GameLevelMgr.Instance.ChangeMonsterNum(1);
 
         _nowNum--;
         if (_nowNum == 0)

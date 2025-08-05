@@ -1310,6 +1310,7 @@ GameObject:
   - component: {fileID: 4815320819671441395}
   - component: {fileID: 2080756116319310094}
   - component: {fileID: 7197380819738645818}
+  - component: {fileID: -1230338606839642288}
   m_Layer: 5
   m_Name: GamePanel
   m_TagString: Untagged
@@ -1378,6 +1379,18 @@ MonoBehaviour:
   - {fileID: 3138691530038922181}
   - {fileID: 2320378885356897896}
   - {fileID: 4299505729596472445}
+--- !u!225 &-1230338606839642288
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337263005598463031}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7280328506130847438
 GameObject:
   m_ObjectHideFlags: 0

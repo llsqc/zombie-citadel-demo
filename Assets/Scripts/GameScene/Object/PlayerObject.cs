@@ -61,7 +61,12 @@ public class PlayerObject : MonoBehaviour
 
         for (int i = 0; i < colliders.Length; i++)
         {
-            //knife logic
+            var monster = colliders[i].GetComponent<MonsterObject>();
+            if (monster != null)
+            {
+                monster.Wound(atk);
+                break;
+            }
         }
     }
 
@@ -73,7 +78,12 @@ public class PlayerObject : MonoBehaviour
 
         for (int i = 0; i < hitCount; i++)
         {
-            //shoot logic
+            var monster = hits[i].collider.GetComponent<MonsterObject>();
+            if (monster != null)
+            {
+                monster.Wound(atk);
+                break;
+            }
         }
     }
 
