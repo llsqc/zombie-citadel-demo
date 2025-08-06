@@ -67,4 +67,13 @@ public class GameLevelMgr
     {
         _aliveCount += num;
     }
+
+    public void ClearInfo()
+    {
+        _monsterPoints.Clear();
+        _aliveCount = 0;
+        _nowWaveNum = 0;
+        _maxWaveNum = 0;
+        player = null;
+    }
 }

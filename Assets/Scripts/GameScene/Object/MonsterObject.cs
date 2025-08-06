@@ -59,7 +59,11 @@ public class MonsterObject : MonoBehaviour
         GameLevelMgr.Instance.ChangeMonsterNum(-1);
         Destroy(gameObject);
 
-        GameLevelMgr.Instance.IsGameOver();
+        if (GameLevelMgr.Instance.IsGameOver())
+        {
+            GameOverPanel panel = UIManager.Instance.ShowPanel<GameOverPanel>();
+            panel.InitInfo(GameLevelMgr.Instance.player.money, true);
+        }
     }
 
     public void BornOver()

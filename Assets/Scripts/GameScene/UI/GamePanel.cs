@@ -29,6 +29,8 @@ public class GamePanel : BasePanel
         });
 
         botTrans.gameObject.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void UpdateTowerHp(int hp, int maxHp)

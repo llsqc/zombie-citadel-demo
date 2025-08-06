@@ -35,7 +35,8 @@ public class MainTowerObject : MonoBehaviour
         {
             hp = 0;
             isDead = true;
-            //end game
+            GameOverPanel panel = UIManager.Instance.ShowPanel<GameOverPanel>();
+            panel.InitInfo((int)(GameLevelMgr.Instance.player.money * 0.5f), false);
         }
 
         UpdateHp(hp, maxHp);
