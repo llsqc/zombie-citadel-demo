@@ -44,6 +44,7 @@ public class MonsterObject : MonoBehaviour
         }
         else
         {
+            GameDataMgr.Instance.PlaySound("Music/Wound");
         }
     }
 
@@ -52,6 +53,7 @@ public class MonsterObject : MonoBehaviour
         isDead = true;
         _agent.isStopped = true;
         _animator.SetBool(dead, true);
+        GameDataMgr.Instance.PlaySound("Music/dead");
     }
 
     public void DeadEvent()
@@ -90,6 +92,8 @@ public class MonsterObject : MonoBehaviour
         Collider[] colliders = new Collider[100];
         var size = Physics.OverlapSphereNonAlloc(transform.position + transform.forward + transform.up, 1, colliders,
             1 << LayerMask.NameToLayer("MainTower"));
+        
+        GameDataMgr.Instance.PlaySound("Music/Eat");
         for (int i = 0; i < size; i++)
         {
             if (MainTowerObject.Instance.gameObject == colliders[i].gameObject)

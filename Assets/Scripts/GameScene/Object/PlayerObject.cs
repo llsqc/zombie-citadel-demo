@@ -59,6 +59,8 @@ public class PlayerObject : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position + transform.forward + transform.up, 1,
             1 << LayerMask.NameToLayer("Monster"));
 
+        GameDataMgr.Instance.PlaySound("Music/Knife");
+
         for (int i = 0; i < colliders.Length; i++)
         {
             var monster = colliders[i].GetComponent<MonsterObject>();
@@ -76,11 +78,17 @@ public class PlayerObject : MonoBehaviour
         int hitCount = Physics.RaycastNonAlloc(gunPoint.position, gunPoint.forward, hits, 1000,
             1 << LayerMask.NameToLayer("Monster"));
 
+        GameDataMgr.Instance.PlaySound("Music/Gun");
+
         for (int i = 0; i < hitCount; i++)
         {
             var monster = hits[i].collider.GetComponent<MonsterObject>();
             if (monster != null)
             {
+                GameObject effObj = Instantiate(Resources.Load<GameObject>(GameDataMgr.Instance.nowSelectRole.hitEff));
+                effObj.transform.position = hits[i].point;
+                effObj.transform.rotation = Quaternion.LookRotation(hits[i].normal);
+                Destroy(effObj, 1);
                 monster.Wound(atk);
                 break;
             }
