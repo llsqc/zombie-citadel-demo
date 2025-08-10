@@ -41,8 +41,8 @@ public class MonsterPoint : MonoBehaviour
         GameObject obj = Instantiate(Resources.Load<GameObject>(info.res), transform.position, Quaternion.identity);
         MonsterObject monsterObj = obj.AddComponent<MonsterObject>();
         monsterObj.InitInfo(info);
-        
-        GameLevelMgr.Instance.ChangeMonsterNum(1);
+
+        GameLevelMgr.Instance.AddMonster(monsterObj);
 
         _nowNum--;
         if (_nowNum == 0)

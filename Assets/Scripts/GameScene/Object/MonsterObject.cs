@@ -58,7 +58,7 @@ public class MonsterObject : MonoBehaviour
 
     public void DeadEvent()
     {
-        GameLevelMgr.Instance.ChangeMonsterNum(-1);
+        GameLevelMgr.Instance.RemoveMonster(this);
         Destroy(gameObject);
 
         if (GameLevelMgr.Instance.IsGameOver())
@@ -92,7 +92,7 @@ public class MonsterObject : MonoBehaviour
         Collider[] colliders = new Collider[100];
         var size = Physics.OverlapSphereNonAlloc(transform.position + transform.forward + transform.up, 1, colliders,
             1 << LayerMask.NameToLayer("MainTower"));
-        
+
         GameDataMgr.Instance.PlaySound("Music/Eat");
         for (int i = 0; i < size; i++)
         {

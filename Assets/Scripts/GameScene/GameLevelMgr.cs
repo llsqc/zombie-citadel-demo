@@ -15,7 +15,7 @@ public class GameLevelMgr
     private int _nowWaveNum;
     private int _maxWaveNum;
 
-    private int _aliveCount;
+    private List<MonsterObject> _monsterList = new List<MonsterObject>();
 
 
     private GameLevelMgr()
@@ -60,18 +60,38 @@ public class GameLevelMgr
     {
         if (_monsterPoints.Any(t => !t.IsOver()))
             return false;
-        return _aliveCount <= 0;
+        return _monsterList.Count <= 0;
     }
 
-    public void ChangeMonsterNum(int num)
+    public void AddMonster(MonsterObject monster)
     {
-        _aliveCount += num;
+        _monsterList.Add(monster);
+    }
+
+    public void RemoveMonster(MonsterObject monster)
+    {
+        _monsterList.Remove(monster);
+    }
+
+    public MonsterObject FindMonster(Vector3 pos, int range)
+    {
+        return _monsterList.FirstOrDefault(t => !t.isDead && Vector3.Distance(pos, t.transform.position) < range);
+    }
+
+    public List<MonsterObject> FindMonsters(Vector3 pos, int range)
+    {
+        var monsters = new List<MonsterObject>
+        {
+            _monsterList.FirstOrDefault(t =>
+                !t.isDead && Vector3.Distance(pos, t.transform.position) < range)
+        };
+        return monsters;
     }
 
     public void ClearInfo()
     {
         _monsterPoints.Clear();
-        _aliveCount = 0;
+        _monsterList.Clear();
         _nowWaveNum = 0;
         _maxWaveNum = 0;
         player = null;
