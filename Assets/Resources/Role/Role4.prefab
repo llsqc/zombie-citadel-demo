@@ -630,6 +630,7 @@ GameObject:
   - component: {fileID: 7396919427109751351}
   - component: {fileID: 5900744116984304372}
   - component: {fileID: 5336892496041623591}
+  - component: {fileID: 8380265687770832489}
   m_Layer: 0
   m_Name: Role4
   m_TagString: Untagged
@@ -713,6 +714,32 @@ MonoBehaviour:
   money: 0
   roundSpeed: 50
   gunPoint: {fileID: 1028413298151932056}
+--- !u!143 &8380265687770832489
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2247695152284056847}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 3
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &2397264553297429950
 GameObject:
   m_ObjectHideFlags: 0

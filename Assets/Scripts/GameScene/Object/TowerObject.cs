@@ -22,6 +22,9 @@ public class TowerObject : MonoBehaviour
 
     private void Update()
     {
+        if (_towerInfo == null)
+            return;
+
         if (_towerInfo.atkType == 1)
         {
             SingleTargetAttack();
@@ -40,7 +43,7 @@ public class TowerObject : MonoBehaviour
             _targetObject = GameLevelMgr.Instance.FindMonster(transform.position, _towerInfo.atkRange);
         }
 
-        if (_targetObject != null)
+        if (_targetObject == null)
             return;
 
         _targetPos = _targetObject.transform.position;
@@ -49,7 +52,7 @@ public class TowerObject : MonoBehaviour
         head.rotation = Quaternion.Slerp(head.rotation, Quaternion.LookRotation(_targetPos - head.position),
             RoundSpeed * Time.deltaTime);
 
-        if (Vector3.Angle(head.forward, _targetPos = head.position) < 5 &&
+        if (Vector3.Angle(head.forward, _targetPos - head.position) < 5 &&
             Time.time - _nowTime >= _towerInfo.offsetTime)
         {
             _targetObject.Wound(_towerInfo.atk);
@@ -65,6 +68,9 @@ public class TowerObject : MonoBehaviour
     {
         _targetObjects = GameLevelMgr.Instance.FindMonsters(transform.position, _towerInfo.atkRange);
 
+        if (_targetObjects == null)
+            return;
+
         if (_targetObjects.Count > 0 && Time.time - _nowTime >= _towerInfo.offsetTime)
         {
             GameObject effObj = Instantiate(Resources.Load<GameObject>(_towerInfo.eff), gunPoint.position,
@@ -73,7 +79,10 @@ public class TowerObject : MonoBehaviour
 
             foreach (var t in _targetObjects)
             {
-                t.Wound(_towerInfo.atk);
+                if (t != null)
+                {
+                    t.Wound(_towerInfo.atk);
+                }
             }
 
             _nowTime = Time.time;

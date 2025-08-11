@@ -24,7 +24,7 @@ public abstract class BasePanel : MonoBehaviour
     }
 
     // 更新面板的透明度
-    private void Update()
+    protected virtual void Update()
     {
         if (isShow && _canvasGroup.alpha < 1)
         {

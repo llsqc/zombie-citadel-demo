@@ -64,7 +64,7 @@ public class PlayerObject : MonoBehaviour
         for (int i = 0; i < colliders.Length; i++)
         {
             var monster = colliders[i].GetComponent<MonsterObject>();
-            if (monster != null)
+            if (monster != null && !monster.isDead)
             {
                 monster.Wound(atk);
                 break;
@@ -83,7 +83,7 @@ public class PlayerObject : MonoBehaviour
         for (int i = 0; i < hitCount; i++)
         {
             var monster = hits[i].collider.GetComponent<MonsterObject>();
-            if (monster != null)
+            if (monster != null && !monster.isDead)
             {
                 GameObject effObj = Instantiate(Resources.Load<GameObject>(GameDataMgr.Instance.nowSelectRole.hitEff));
                 effObj.transform.position = hits[i].point;

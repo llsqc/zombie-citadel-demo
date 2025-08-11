@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 6935423620400060253}
   - component: {fileID: 1966522138301804709}
   - component: {fileID: -8231747051881018659}
+  - component: {fileID: 5783348137945812548}
   m_Layer: 0
   m_Name: Role5
   m_TagString: Untagged
@@ -181,6 +182,32 @@ MonoBehaviour:
   money: 0
   roundSpeed: 50
   gunPoint: {fileID: 3532255214608010957}
+--- !u!143 &5783348137945812548
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009688507790226551}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 3
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &1114703303939662619
 GameObject:
   m_ObjectHideFlags: 0

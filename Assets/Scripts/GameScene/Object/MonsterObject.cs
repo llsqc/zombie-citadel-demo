@@ -36,6 +36,9 @@ public class MonsterObject : MonoBehaviour
 
     public void Wound(int dmg)
     {
+        if (isDead)
+            return;
+
         hp -= dmg;
         _animator.SetTrigger(wound);
         if (hp <= 0)
@@ -54,6 +57,7 @@ public class MonsterObject : MonoBehaviour
         _agent.isStopped = true;
         _animator.SetBool(dead, true);
         GameDataMgr.Instance.PlaySound("Music/dead");
+        GameLevelMgr.Instance.player.AddMoney(150);
     }
 
     public void DeadEvent()
