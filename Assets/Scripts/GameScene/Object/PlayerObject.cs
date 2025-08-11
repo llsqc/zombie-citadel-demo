@@ -75,7 +75,7 @@ public class PlayerObject : MonoBehaviour
     public void ShootEvent()
     {
         RaycastHit[] hits = new RaycastHit[50];
-        int hitCount = Physics.RaycastNonAlloc(gunPoint.position, gunPoint.forward, hits, 1000,
+        int hitCount = Physics.RaycastNonAlloc(gunPoint.position, transform.forward, hits, 1000,
             1 << LayerMask.NameToLayer("Monster"));
 
         GameDataMgr.Instance.PlaySound("Music/Gun");

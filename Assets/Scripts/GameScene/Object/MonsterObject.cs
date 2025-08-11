@@ -54,10 +54,10 @@ public class MonsterObject : MonoBehaviour
     public void Dead()
     {
         isDead = true;
-        _agent.isStopped = true;
+        _agent.enabled = false;
         _animator.SetBool(dead, true);
         GameDataMgr.Instance.PlaySound("Music/dead");
-        GameLevelMgr.Instance.player.AddMoney(150);
+        GameLevelMgr.Instance.player.AddMoney(10);
     }
 
     public void DeadEvent()
