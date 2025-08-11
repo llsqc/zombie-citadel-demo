@@ -80,12 +80,8 @@ public class GameLevelMgr
 
     public List<MonsterObject> FindMonsters(Vector3 pos, int range)
     {
-        var monsters = new List<MonsterObject>
-        {
-            _monsterList.FirstOrDefault(t =>
-                !t.isDead && Vector3.Distance(pos, t.transform.position) < range)
-        };
-        return monsters;
+        return _monsterList.Where(t =>
+            t != null && !t.isDead && Vector3.Distance(pos, t.transform.position) < range).ToList();
     }
 
     public void ClearInfo()
